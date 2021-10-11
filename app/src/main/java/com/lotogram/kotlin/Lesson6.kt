@@ -7,7 +7,7 @@ package com.lotogram.kotlin
  */
 
 fun main() {
-    Student.`is`()//关键字函数名
+    Test.`is`()//关键字函数名
 
     `123`()//不规范命名的函数名
 }
