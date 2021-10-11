@@ -7,10 +7,15 @@ package com.lotogram.kotlin
  */
 
 fun main() {
-
+    println(doSomething(age = 34, id = "abc"))
+    println(getDescription())
 }
 
 //默认是public
-private fun doSomething(name: String, age: Int): String {
-    return "姓名：$name  年龄：$age"
+private fun doSomething(name: String = "邬友亮", age: Int = 24, id: String): String {
+    return "姓名：$name  年龄：$age  ID：$id"
+}
+
+fun getDescription(): String {
+    return "修饰符"
 }
