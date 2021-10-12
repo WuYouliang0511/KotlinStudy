@@ -11,5 +11,7 @@ public class Student {
 
     TreeMap<String, Object> map = new TreeMap<>();
 
+    Player player = new Player("aaaa");
+
 
 }
