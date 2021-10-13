@@ -21,9 +21,9 @@ fun main() {
 
 }
 
-class Player(
+class Player constructor(
     _name: String,/*临时变量一般会加下划线*/
-    var /*如果变量前加了val修饰符 ，则该变量是类的成员变量*/ age: Int?,
+    /*如果变量前加了val修饰符 ，则该变量是类的成员变量*/ _age: Int?,
     _isNormal: Boolean = false/*默认值*/
 ) : Serializable {
 
@@ -35,12 +35,47 @@ class Player(
         }
 
     var isNormal = _isNormal
-        get() = false
+        get() {
+            return true
+        }
         //此方法为私有
         private set(value) {
             name += "$value"
             field = value
         }
+
+    var age = _age
+        get() {
+            return field?.plus(50)
+        }
+        //        set(value) {
+//            field = value?.plus(20)
+//        }
+        set(value) = if (value!! > 30) {
+            field = 40
+        } else {
+            field = 90
+        }
+
+    lateinit var equipment: String
+
+    val weapon: String by lazy { loadLazy() }
+
+    private fun loadLazy(): String {
+        return "aa"
+    }
+
+    fun read() {
+        equipment = "sharp knife"
+    }
+
+    fun battle() {
+        println(equipment)
+    }
+
+    fun battleWithCheck() {
+        if (::equipment.isInitialized) println(equipment)
+    }
 
     constructor(name: String) : this(name, 10)
 
@@ -57,8 +92,6 @@ class Player(
     }
 
     override fun toString(): String {
-        return super.toString()
+        return "aaaaaaaa"
     }
-
-
 }

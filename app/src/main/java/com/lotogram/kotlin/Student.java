@@ -13,5 +13,12 @@ public class Student {
 
     Player player = new Player("aaaa");
 
+    {
+        player.getAge();
+        ApplicationConfig.getS();
+    }
+
+
+
 
 }

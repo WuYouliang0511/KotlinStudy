@@ -22,5 +22,17 @@ public class Test {
         Student s2 = new Student();
         System.out.println(s1 == s2);//比较是否指向同一个引用
         System.out.println(s1.equals(s2));//比较结构
+
+        ConfigMap configMap1 = new ConfigMap();
+        ConfigMap configMap2 = new ConfigMap();
+        ConfigMap configMap3 = new ConfigMap();
+        System.out.println(configMap3);
+        System.out.println(configMap1);
+        System.out.println(configMap2);
+
+        System.out.println("---------------------");
+        System.out.println(ConfigMap.Companion);
+        System.out.println(ConfigMap.Companion);
+        System.out.println(ConfigMap.Companion);
     }
 }
