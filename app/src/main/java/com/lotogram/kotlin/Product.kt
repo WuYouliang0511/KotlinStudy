@@ -6,13 +6,13 @@ package com.lotogram.kotlin
  * @Company         LotoGram
  */
 
-open class Product constructor(val name: String) {
+open class Product constructor(open val name: String) {
 
     fun description() = "Product: $name"
     open fun load() = "Nothing..."
 }
 
-class LuxuryProduct : Product("Luxury") {
+class LuxuryProduct constructor(override val name: String) : Product(name) {
 
     override fun load() = "LuxuryProduct loading..."
 
@@ -21,7 +21,7 @@ class LuxuryProduct : Product("Luxury") {
 }
 
 fun main() {
-    val p: Product = LuxuryProduct();
+    val p: Product = LuxuryProduct("aa")
     println(p.description())
 
     //类型判断
@@ -36,5 +36,4 @@ fun main() {
     //智能类型转换
     println((p as LuxuryProduct).special())
     p.special()//编译通过
-
 }
